@@ -8,4 +8,4 @@ Debug list
 * indent error on file customer_banking.py where the instructor
   put the 'if', needed to bring instructors 'if' statement back
   a tab to call my main() funtion. 
-* 
+* BCS had a shift change and left me hanging, thier help was not effective
