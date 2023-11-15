@@ -17,13 +17,26 @@ def create_savings_account(balance, interest_rate, months):
     # Create an instance of the `Account` class and pass in the balance and interest parameters.
     #  Hint: You need to add the interest as a value, i.e, 0.
     # ADD YOUR CODE HERE
-    savings_account = Account(balance, 0.0)
+    savings_account = Account(balance, 0)
     # Calculate interest earned
      # ADD YOUR CODE HERE
-    interest_earned = balance * (interest_rate/12) * months
-    # Update the savings account balance by adding the interest earned
+    
+    #interest_earned = balance * (interest_rate / 12) * months
+    #or
+    #interest_earned = ((balance * (1 + interest_rate)**months) - balance))
+    #this formula needs work, it requires a few extra variables, the formula would technically be the following;
+    # amount = principle * (1 + interest(whole number) / 100) ** months then the amount - principle is the compounded interest
+    interest_earned = balance * (interest_rate / 100 * months / 12)
+    #if using the class hint, need to ask for an int as input, not a float, then convert to float through this formula
+    #this is the same as the formula used in the class, for an input with a decimal, like i request.  the assignment doest 
+    #ask us to include or be graded for cverifying isdigit operations... and this formula is incorrect, imo.  the correct formula
+    #would be a simple compounding interest, as the balance grows over time, the interest would also grow.  
+    
+
     # ADD YOUR CODE HERE
-    updated_balance = savings_account + interest_earned
+    # savings_account = float(savings_account)
+    # interest_earned = float(interest_earned)
+    updated_balance = savings_account.balance + interest_earned
     # Pass the updated_balance to the set balance method using the instance of the SavingsAccount class.
     # ADD YOUR CODE HERE
     savings_account.set_balance(updated_balance)

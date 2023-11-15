@@ -13,7 +13,9 @@ def main():
     # ADD YOUR CODE HERE
     print("Starting the main function.")
     savings_balance = float(input('Enter your savings balance:'))
-    savings_interest = float(input('Enter your savings interest rate in .00 form:'))
+    savings_interest = float(input('Enter your savings interest rate:'))       
+    #im choosing this method because the int rate calculation is sems more intuitive, and simpler. 
+    #Are people more likely to enter % as a whole number?
     savings_maturity = int(input('Enter the age of this account in months:'))
 
 
@@ -22,21 +24,23 @@ def main():
 
     # Print out the interest earned and updated savings account balance with interest earned for the given months.
     # ADD YOUR CODE HERE
-    print(f"this account has earned {interest_earned} and the new account balance since {savings_maturity} moths ago is {updated_savings_balance}")
+    print(f"this account has earned ${interest_earned: ,.2f} in interest and the new account balance since {savings_maturity} months ago is ${updated_savings_balance: ,.2f}")
 
     # Prompt the user to set the CD balance, interest rate, and months for the CD account.
     # ADD YOUR CODE HERE
-    cd_balance = float(input("What is your cd account balance?"))
-    cd_interest = float(input("what is the interest rate of your cd account?"))
-    cd_maturity = int(input("How many months old is your cd account?"))
+    cd_balance = float(input("Enter your cd account balance:"))
+    cd_interest = float(input("Enter your savings interest rate:"))
+    cd_maturity = int(input("Enter the age of this account in months:"))
     # Call the create_cd_account function and pass the variables from the user.
     updated_cd_balance, interest_earned = create_cd_account(cd_balance, cd_interest, cd_maturity)
 
     # Print out the interest earned and updated CD account balance with interest earned for the given months.
     # ADD YOUR CODE HERE
-    print(f"this account has earned {interest_earned} and the new account balance since {cd_maturity} moths ago is {updated_cd_balance}")
+    print(f"This account has earned ${interest_earned: ,.2f} in interest and the new account balance since {cd_maturity} months ago is ${updated_cd_balance: ,.2f}")
 
-    if __name__ == "__main__":
+if __name__ == "__main__":
     # Call the main function.
-        main()
+    main()
     
+    
+
